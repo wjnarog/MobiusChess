@@ -36,3 +36,5 @@ if __name__ == '__main__':
 			running = False
 		# Draw the board
 		draw(screen)
+
+pygame.quit()
