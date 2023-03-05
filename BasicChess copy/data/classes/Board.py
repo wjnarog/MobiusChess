@@ -14,21 +14,24 @@ class Board:
 	def __init__(self, width, height):
 		self.width = width
 		self.height = height
-		self.tile_width = width // 8
-		self.tile_height = height // 8
+		self.tile_width = width // 9
+		self.tile_height = height // 11
 		self.selected_piece = None
 		self.turn = 'white'
 
 		# try making it chess.board.fen()
 		self.config = [
-			['bR', 'bN', 'bB', 'bQ', 'bK', 'bB', 'bN', 'bR'],
-			['bP', 'bP', 'bP', 'bP', 'bP', 'bP', 'bP', 'bP'],
-			['','','','','','','',''],
-			['','','','','','','',''],
-			['','','','','','','',''],
-			['','','','','','','',''],
-			['wP', 'wP', 'wP', 'wP', 'wP', 'wP', 'wP', 'wP'],
-			['wR', 'wN', 'wB', 'wQ', 'wK', 'wB', 'wN', 'wR'],
+			['bR', 'bN', 'bB', 'bQ', 'bK', 'bQ', 'bB', 'bN', 'bR'],
+			['bP', 'bP', 'bP', 'bP', 'bP', 'bP', 'bP', 'bP', 'bP'],
+			['','','','','','','','',''],
+			['','','','','','','','',''],
+			['','','','','','','','',''],
+			['','','','','','','','',''],
+			['','','','','','','','',''],
+			['','','','','','','','',''],
+			['','','','','','','','',''],
+			['wP', 'wP', 'wP', 'wP', 'wP', 'wP', 'wP', 'wP', 'wP'],
+			['wR', 'wN', 'wB', 'wQ', 'wK', 'wQ', 'wB', 'wN', 'wR'],
 		]
 
 		self.squares = self.generate_squares()
@@ -38,8 +41,8 @@ class Board:
 
 	def generate_squares(self):
 		output = []
-		for y in range(8):
-			for x in range(8):
+		for y in range(11):
+			for x in range(9):
 				output.append(
 					Square(x,  y, self.tile_width, self.tile_height)
 				)

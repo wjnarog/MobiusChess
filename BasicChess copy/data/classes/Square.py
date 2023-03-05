@@ -27,7 +27,7 @@ class Square:
 
 
 	def get_coord(self):
-		columns = 'abcdefgh'
+		columns = 'abcdefghi'
 		return columns[self.x] + str(self.y + 1)
 
 

@@ -4,7 +4,7 @@ from data.classes.Board import Board
 
 pygame.init()
 
-WINDOW_SIZE = (600, 600)
+WINDOW_SIZE = (675, 825)
 screen = pygame.display.set_mode(WINDOW_SIZE)
 
 #ERROR HERE

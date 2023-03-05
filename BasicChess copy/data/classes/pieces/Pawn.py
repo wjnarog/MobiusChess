@@ -30,7 +30,7 @@ class Pawn(Piece):
 
 		for move in moves:
 			new_pos = (self.x, self.y + move[1])
-			if new_pos[1] < 8 and new_pos[1] >= 0:
+			if new_pos[1] < 11 and new_pos[1] >= 0:
 				output.append(
 					board.get_square_from_pos(new_pos)
 				)
@@ -47,7 +47,7 @@ class Pawn(Piece):
 				output.append(square)
 
 		if self.color == 'white':
-			if self.x + 1 < 8 and self.y - 1 >= 0:
+			if self.x + 1 < 9 and self.y - 1 >= 0:
 				square = board.get_square_from_pos(
 					(self.x + 1, self.y - 1)
 				)
@@ -63,14 +63,14 @@ class Pawn(Piece):
 						output.append(square)
 
 		elif self.color == 'black':
-			if self.x + 1 < 8 and self.y + 1 < 8:
+			if self.x + 1 < 9 and self.y + 1 < 11:
 				square = board.get_square_from_pos(
 					(self.x + 1, self.y + 1)
 				)
 				if square.occupying_piece != None:
 					if square.occupying_piece.color != self.color:
 						output.append(square)
-			if self.x - 1 >= 0 and self.y + 1 < 8:
+			if self.x - 1 >= 0 and self.y + 1 < 11:
 				square = board.get_square_from_pos(
 					(self.x - 1, self.y + 1)
 				)
